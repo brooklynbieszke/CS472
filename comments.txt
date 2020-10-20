@@ -42,12 +42,6 @@ make: *** [bootblock] Error 127
 
 
 Project 3:
--10 test 3 incorrect
-[31mtest 3: err incorrect[0m
-  what results should be found in file: tests/3.err
-  what results produced by your program: tests-out/3.err
-  compare the two using diff, cmp, or related tools to debug, e.g.:
-  prompt> diff tests/3.err tests-out/3.err
 
 -10 test 9 incorrect
 [31mtest 9: err incorrect[0m
