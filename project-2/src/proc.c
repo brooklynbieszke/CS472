@@ -286,7 +286,7 @@ wait(void)
       havekids = 1;
       if(p->state == ZOMBIE){
         // Found one.
-	curproc->readcount += p->readcount;
+        curproc->readcount += p->readcount;
         pid = p->pid;
         kfree(p->kstack);
         p->kstack = 0;

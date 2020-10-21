@@ -11400,7 +11400,7 @@ myproc(void) {
       havekids = 1;
       if(p->state == ZOMBIE){
         // Found one.
-	curproc->readcount += p->readcount;
+        curproc->readcount += p->readcount;
 80103e5e:	8b 43 7c             	mov    0x7c(%ebx),%eax
 80103e61:	01 46 7c             	add    %eax,0x7c(%esi)
         pid = p->pid;
@@ -11411,7 +11411,7 @@ myproc(void) {
       havekids = 1;
       if(p->state == ZOMBIE){
         // Found one.
-	curproc->readcount += p->readcount;
+        curproc->readcount += p->readcount;
         pid = p->pid;
 80103e6a:	8b 73 10             	mov    0x10(%ebx),%esi
         kfree(p->kstack);
@@ -11422,7 +11422,7 @@ myproc(void) {
 80103e73:	ff 73 04             	pushl  0x4(%ebx)
       if(p->state == ZOMBIE){
         // Found one.
-	curproc->readcount += p->readcount;
+        curproc->readcount += p->readcount;
         pid = p->pid;
         kfree(p->kstack);
         p->kstack = 0;
@@ -13342,7 +13342,7 @@ argstr(int n, char **pp)
 80104819:	8d bc 27 00 00 00 00 	lea    0x0(%edi,%eiz,1),%edi
 
 80104820 <syscall>:
-[SYS_getreadcount] sys_getreadcount
+[SYS_getreadcount] sys_getreadcount,
 };
 
 void
@@ -13377,7 +13377,7 @@ syscall(void)
 8010483e:	8b 3c 85 00 76 10 80 	mov    -0x7fef8a00(,%eax,4),%edi
 80104845:	85 ff                	test   %edi,%edi
 80104847:	74 17                	je     80104860 <syscall+0x40>
-  if (num == SYS_read)
+    if(num == SYS_read)
 80104849:	83 f8 05             	cmp    $0x5,%eax
 8010484c:	74 42                	je     80104890 <syscall+0x70>
       myproc()->readcount++;
@@ -13399,7 +13399,7 @@ syscall(void)
 8010485b:	90                   	nop
 8010485c:	8d 74 26 00          	lea    0x0(%esi,%eiz,1),%esi
   if(num > 0 && num < NELEM(syscalls) && syscalls[num]) {
-  if (num == SYS_read)
+    if(num == SYS_read)
       myproc()->readcount++;
     curproc->tf->eax = syscalls[num]();
   } else {
@@ -13408,7 +13408,7 @@ syscall(void)
             curproc->pid, curproc->name, num);
 80104861:	8d 43 6c             	lea    0x6c(%ebx),%eax
   if(num > 0 && num < NELEM(syscalls) && syscalls[num]) {
-  if (num == SYS_read)
+    if(num == SYS_read)
       myproc()->readcount++;
     curproc->tf->eax = syscalls[num]();
   } else {
@@ -13436,7 +13436,7 @@ syscall(void)
 
   num = curproc->tf->eax;
   if(num > 0 && num < NELEM(syscalls) && syscalls[num]) {
-  if (num == SYS_read)
+    if(num == SYS_read)
       myproc()->readcount++;
 80104890:	e8 db ee ff ff       	call   80103770 <myproc>
 80104895:	83 40 7c 01          	addl   $0x1,0x7c(%eax)
@@ -16002,8 +16002,7 @@ sys_uptime(void)
 
 80105640 <sys_getreadcount>:
 
-int sys_getreadcount(void)
-{
+int sys_getreadcount(void){
 80105640:	55                   	push   %ebp
 80105641:	89 e5                	mov    %esp,%ebp
 80105643:	83 ec 08             	sub    $0x8,%esp

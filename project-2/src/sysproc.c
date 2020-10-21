@@ -90,7 +90,6 @@ sys_uptime(void)
   return xticks;
 }
 
-int sys_getreadcount(void)
-{
+int sys_getreadcount(void){
   return myproc()->readcount;
 }
