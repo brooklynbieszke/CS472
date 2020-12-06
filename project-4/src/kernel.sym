@@ -54,8 +54,8 @@
 00000000 proc.c
 801035b0 allocproc
 8010a000 first.1672
-8010a004 lfsr.1570
 8010a5b8 initproc
+8010a004 lfsr.1642
 80107800 states.1698
 00000000 sleeplock.c
 00000000 spinlock.c
@@ -123,7 +123,7 @@
 80104a60 syscall
 8010660f vector214
 80106102 vector99
-80103830 cpuid
+801037f0 cpuid
 80101a40 writei
 801062a3 vector141
 801056b0 sys_fork
@@ -166,7 +166,7 @@
 80105edd vector38
 801022d0 kfree
 8010672f vector238
-801037b0 mycpu
+80103770 mycpu
 80101790 iput
 80106243 vector133
 80106018 vector73
@@ -215,6 +215,7 @@
 801061ec vector125
 801042a0 getpinfo
 80106d30 allocuvm
+80112d20 thisPStat
 801058ef trapret
 80106627 vector216
 80105fbe vector63
@@ -240,7 +241,6 @@
 8010637b vector159
 801065f7 vector212
 80104eb0 sys_link
-80112d20 currPStat
 80105f2e vector47
 801066b7 vector228
 80105f01 vector42
@@ -257,7 +257,7 @@
 8010610b vector100
 80106573 vector201
 80106f80 clearpteu
-80103850 myproc
+80103810 myproc
 80105900 tvinit
 80105fa3 vector60
 80105e56 vector23
@@ -306,7 +306,7 @@
 80105feb vector68
 80105dcb vector6
 8010a48c _binary_initcode_end
-80103770 rand
+80103b00 rand
 80100000 multiboot_header
 80106213 vector129
 80103b40 scheduler
@@ -341,7 +341,7 @@
 801024f0 kbdgetc
 8010615c vector109
 80105e3b vector20
-801039f0 fork
+801039b0 fork
 80105f64 vector53
 80105e29 vector18
 0000008a _binary_entryother_size
@@ -405,11 +405,11 @@
 80106693 vector225
 801026e0 lapicid
 801064cb vector187
-80103970 growproc
+80103930 growproc
 801043b0 holdingsleep
 80112d00 ncpu
 80105e95 vector30
-80103880 userinit
+80103840 userinit
 801000d0 bread
 801061fe vector127
 80103490 piperead

@@ -28,7 +28,7 @@ void pinit(void)
   initlock(&ptable.lock, "ptable");
 }
 
-void initThisPStat(void)
+void initializePStat(void)
 {
   for(int i = 0; i < NPROC; i++){
     thisPStat.inuse[i] = 0;
