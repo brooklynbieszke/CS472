@@ -56,3 +56,24 @@ Project 3:
   what results produced by your program: tests-out/10.err
   compare the two using diff, cmp, or related tools to debug, e.g.:
   prompt> diff tests/10.err tests-out/10.err
+
+
+Project 4:
+75% late submission
+failed to build
+main.o: In function `main':
+/home/seed/Desktop/CS472_TA/workspace/scheduling-xv6-lottery/src/main.c:36: undefined reference to `initializePStat'
+Makefile:124: recipe for target 'kernel' failed
+make: *** [kernel] Error 1
+
+
+
+Project 5:
+75% late submission
+-55 null1.c incorrect result
+$ null1 
+4244C8D
+
+-55 readonlycode2.c incorrect result 
+$ readonlycode2 
+pid 3 readonlycode2: trap 14 err 5 on cpu 0 eip 0xf addr 0x1000--kill proc
